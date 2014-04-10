@@ -1,0 +1,4 @@
+name = Cegeka Angular Panel
+description = A module to provide an angular panel
+core = 7.x
+package = Angular

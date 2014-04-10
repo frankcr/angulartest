@@ -1,0 +1,13 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li class="active"><a ng-href="#!/simulator">Home</a></li>
+        <li><a ng-href="#!/creditrequest">Credit Request</a></li>
+    </ul>
+    <h3 class="text-muted">Angular public Simulator</h3>
+</div>
+
+<h4>Je choisis mon project</h4>
+
+<label ng-repeat="project in projects">
+    <input type="radio" name="selectedProjectType" ng-model="$parent.selectedProjectType" ng-value="project.type">{{project.type}}<br>
+</label>

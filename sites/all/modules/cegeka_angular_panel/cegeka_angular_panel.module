@@ -1,0 +1,22 @@
+<?php
+
+/**
+* Implements hook_ctools_plugin_directory().
+*/
+function cegeka_angular_panel_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/' . $plugin_type;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cegeka_angular_panel_theme() {
+  return array(
+    'angular_app' => array(
+      'template' => 'angular/angular-app',
+      'variables' => array(),
+    ),
+  );
+}

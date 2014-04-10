@@ -16,7 +16,7 @@ function cegeka_angular_panel_theme() {
   return array(
     'angular_app' => array(
       'template' => 'angular/angular-app',
-      'variables' => array(),
+      'variables' => array(), 
     ),
   );
 }

@@ -64,6 +64,5 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-  <h3>Dit is een test template</h3>
 </body>
 </html>

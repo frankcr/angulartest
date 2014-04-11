@@ -1,0 +1,27 @@
+<?php
+/**
+ * @file
+ */
+
+function module_settings_menu() {
+  $items['geo'] = array(
+    'page callback' => 'mymodule_abc_view',
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function mymodule_abc_view($ghi = 0, $jkl = '') {
+  // Geocode an address
+  $address = '-128.6079676,54.535844';
+  $point = geocoder_reverse('google', '50.847302','4.728592');
+  dpm($point, 'point');
+//  $geoJSON = $point->out('json');
+//  dpm($geoJSON);
+// List all available handlers
+
+
+  $handlers = geocoder_handler_info();
+  dpm($handlers);
+  return array();
+}

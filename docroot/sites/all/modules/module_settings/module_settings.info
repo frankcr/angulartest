@@ -1,0 +1,10 @@
+name = Module Settings
+description = Use this feature's update hooks to enable modules.
+core = 7.x
+package = FodMob
+version = 7.x-1.0
+dependencies[] = content_management
+dependencies[] = fe_block
+dependencies[] = menu
+features[fe_block_settings][] = menu-content-management
+features[features_api][] = api:2

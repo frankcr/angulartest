@@ -1,0 +1,1 @@
+cp -R docroot/ /var/www/cetelembe/

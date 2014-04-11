@@ -19,6 +19,14 @@ function module_settings_update_7001() {
   module_settings_enable_default_modules();
 }
 
+
+/**
+ * Enable the basic languages.
+ */
+function module_settings_update_7002() {
+  module_enable(array('angular_page'));
+}
+
 /**
  * Enable default modules.
  */

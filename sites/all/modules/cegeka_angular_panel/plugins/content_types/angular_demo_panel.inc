@@ -56,20 +56,21 @@ function angular_demo_render($subtype, $conf, $panel_args, $context = NULL) {
 function include_angular_files($module_name, $component_array = array()) {
 
   $base_dir = drupal_get_path('module', $module_name);
+  $angular_app_dir = $base_dir .'/angular/app/';
 
   // Include all definded components.
   foreach ($component_array as $component_type => $components) {
     foreach ($components as $component) {
-      $uri = $base_dir .'/angular/' . $component_type . '/'.$component;
+      $uri = $angular_app_dir . $component_type . '/'.$component;
     include_file($uri);
     }
   }
 
-  $app_js = $base_dir .'/angular/app.js';
+  $app_js = $angular_app_dir .'app.js';
   include_file($app_js);
 
   // Include all available views.
-  $views = file_scan_directory($base_dir . '/angular/views', '/.*\.js$/');
+  $views = file_scan_directory($angular_app_dir . 'views', '/.*\.js$/');
   foreach ($views as $view) {
     $uri = $view->uri;
     include_file($uri);
@@ -77,14 +78,14 @@ function include_angular_files($module_name, $component_array = array()) {
 
   // Include default css files.
 
-  $app_css = $base_dir . '/angular/app.css';
-   include_file($app_css, 'css');
+  $app_css = $angular_app_dir . 'app.css';
+  include_file($app_css, 'css');
 
-  $bootstrap_css = drupal_get_path('module', 'cegeka_angular_panel') . '/angular/bootstrap.3.0.3.min.css';
+  $bootstrap_css = $angular_app_dir . 'bootstrap.3.0.3.min.css';
   include_file($bootstrap_css, 'css');
 
   // Add basedir as a settings.
-  drupal_add_js(array('cegeka_angular_panel' => array('baseUrl' => $base_dir . '/angular/')), 'setting');
+  drupal_add_js(array($module_name => array('baseUrl' => $angular_app_dir)), 'setting');
 }
 
 /**

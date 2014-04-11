@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Angular Page feature.
+ */
+
+include_once 'angular_page.features.inc';

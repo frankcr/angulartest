@@ -11,14 +11,20 @@ angular
             .html5Mode(false)
             .hashPrefix('!');
 
-        var baseUrl = Drupal.settings.cegeka_angular_panel.baseUrl;
+        var getBaseUrl = function() {
+            if (typeof Drupal !== 'undefined') {
+                return Drupal.settings.cegeka_angular_panel.baseUrl;
+            }
+            return '';
+        }
+
         $routeProvider
             .when('/simulator', {
-                templateUrl: baseUrl + 'views/simulator/simulator.html',
+                templateUrl: getBaseUrl() + 'views/simulator/simulator.html',
                 controller: 'SimulatorCtrl'
             })
             .when('/creditrequest', {
-                templateUrl: baseUrl + 'views/creditrequest/creditrequest.html',
+                templateUrl: getBaseUrl() + 'views/creditrequest/creditrequest.html',
                 controller: 'CreditRequestCtrl'
             })
             .otherwise({

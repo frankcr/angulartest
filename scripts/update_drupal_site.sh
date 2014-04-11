@@ -1,13 +1,13 @@
-rem Remove old site content
+echo 'Remove old site content'
 rm -rf /var/www/cetelembe/*
-rem Copy new site content
+echo 'Copy new site content'
 cp -R docroot/* /var/www/cetelembe/
-rem Copy settings file
+echo 'Copy settings file'
 cp /var/www/cetelembe/sites/default/default.settings.php /var/www/cetelembe/sites/default/settings.php
 cd /var/www/cetelembe
-rem Update database
+echo 'Update database'
 drush updb -y
-rem Revert features
+echo 'Revert features'
 drush fra -y
-rem Clear cache
+echo 'Clear cache'
 drush cc all

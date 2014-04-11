@@ -8,7 +8,7 @@ var applications = [
         "name":"mijntelenet"}
 ];
 
-angular.module('cetelemPublicApp_test', ['cetelemPublicApp', 'ngMockE2E'])
+angular.module('angularPublicApp_test', ['angularPublicApp', 'ngMockE2E'])
     .run(function ($httpBackend) {
         $httpBackend.whenGET('indexMocks.html').passThrough();
         $httpBackend.whenGET('views/creditrequest/creditrequest.html').passThrough();

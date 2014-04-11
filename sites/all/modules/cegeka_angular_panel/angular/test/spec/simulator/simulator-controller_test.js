@@ -3,7 +3,7 @@
 describe('Controller: SimulatorCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('cetelemPublicApp'));
+    beforeEach(module('angularPublicApp'));
 
     var simulatorCtrl,
         scope;

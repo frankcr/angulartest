@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * Implements hook_install()
+ */
+function module_settings_install() {
+    for ($v = 0; $v < 99; $v++) {
+        $function = 'module_settings_update_7' . str_pad($v, 3, '0', STR_PAD_LEFT);
+        if (function_exists($function)) {
+            call_user_func($function);
+        }
+    }
+}
+
+/**
+ * Enable the basic theme, modules and features.
+ */
+function module_settings_update_7001() {
+  module_settings_enable_default_modules();
+}
+
+
+/**
+ * Enable the basic languages.
+ */
+function module_settings_update_7002() {
+  module_enable(array('angular_page'));
+}
+
+/**
+ * Enable default modules.
+ */
+function module_settings_enable_default_modules() {
+    module_enable(array(
+      "admin_menu",
+      "admin_menu_toolbar",
+      "ctools",
+      "content_management",
+      "dblog",
+      "devel",
+      "diff",
+      "entity",
+      "features",
+      "fodmob_languages",
+      "i18n",
+      "i18n_node",
+      "i18n_string",
+      "imce",
+      "imce_wysiwyg",
+      "l10n_update",
+      "libraries",
+      "menu",
+      "module_filter",
+      "node",
+      "path",
+      "reroute_email",
+      "strongarm",
+      "suggestions",
+      "system",
+      "text",
+      "token",
+      "translation",
+      "transliteration",
+      "update",
+      "user",
+      "variable",
+      "variable_admin",
+      "views",
+      "views_bulk_operations",
+      "views_content",
+      "views_languages_field",
+      "views_slideshow",
+      "views_ui",
+      "wysiwyg",
+    ));
+
+}
